@@ -1,0 +1,32 @@
+<div class="editPatient" layout-fill>
+    <md-toolbar layout="row" class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <span>Edit Patient:</span>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding="40px" flex="">
+        <form name="editPatientForm" class="container-fluid" ng-submit="editPatient.editPatientSubmit()">
+            <div flex="70" layout="row" layout-align="space-between center">
+                <md-input-container flex="45" layout-fill>
+                    <label>Patient Name:</label>
+                    <input required type="text" ng-model="editPatient.patient.name">
+                </md-input-container>
+
+                <md-input-container flex="45" layout-fill>
+                    <label>DOB:</label>
+                    <input required ng-model="editPatient.patient.birthday" type="date">
+                </md-input-container>
+            </div>
+            <div flex="70" layout="row">
+                <md-input-container flex="100" layout-fill>
+                    <label>Full Address:</label>
+                    <input type="text" ng-model="editPatient.patient.address">
+                </md-input-container>
+            </div>
+            <div layout-align="end center" layout>
+                <md-button type="submit" class="md-raised md-primary" ng-disabled="editPatientForm.$invalid">Save</md-button>
+
+            </div>
+        </form>
+    </md-content>
+</div>

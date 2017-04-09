@@ -1,0 +1,27 @@
+<div class="addDiagnose" layout-fill>
+    <md-toolbar layout="row" class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <span>Add New Diagnose:</span>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding="40px" flex="">
+        <form name="editDiagnoseForm" class="container-fluid" ng-submit="addDiagnose.addDiagnose()">
+            <div flex="70" layout="row" layout-align="space-between center">
+                <md-input-container flex="45" layout-fill>
+                    <label>Code:</label>
+                    <input type="text" min="6" minlength="6" required ng-model="addDiagnose.diagnose.code">
+                </md-input-container>
+
+            </div>
+            <div flex="70" layout="row">
+                <md-input-container flex="100" layout-fill>
+                    <label>Diagnose:</label>
+                    <input required ng-model="addDiagnose.diagnose.diagnose_text">
+                </md-input-container>
+            </div>
+            <div layout-align="end center" layout>
+                <md-button type="submit" class="md-raised md-primary" ng-disabled="editDiagnoseForm.$invalid">Save</md-button>
+            </div>
+        </form>
+    </md-content>
+</div>

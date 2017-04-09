@@ -1,0 +1,16 @@
+<section class="clinicalInfo" layout="row" flex="">
+    <left-side-clinical-info-directive patient="clinicalInfo.$storage.patient"></left-side-clinical-info-directive>
+    <md-content flex="">
+        <div layout="column" layout-align="top center">
+            <md-button class="md-fab" aria-label="Add Diagnose" ui-sref="main.clinicalInfo.add_diagnose">
+               +
+            </md-button>
+            <div class="breadvrumbs" layout-align="top left" flex="">
+                <span class="blueLight">{{clinicalInfo.clinicalInfoBreadcrumbs.level1.title}}</span> > {{clinicalInfo.clinicalInfoBreadcrumbs.level1.level2.title}}
+            </div>
+            <div layout-fill>
+                <div ui-view class="dinamicRow" layout-align="start"></div>
+            </div>
+        </div>
+    </md-content>
+</section>

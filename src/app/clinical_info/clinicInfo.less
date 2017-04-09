@@ -1,0 +1,65 @@
+.clinicalInfo {
+  height: 100%;
+  .breadvrumbs {
+    width: 100%;
+    padding: 8px 20px;
+  }
+  .dinamicRow {
+    align-items: flex-start;
+  }
+  .md-toolbar-tools {
+    height: 54px;
+    max-height: 54px;
+  }
+  md-list.md-dense md-list-item.md-3-line, md-list.md-dense md-list-item.md-3-line > .md-no-style {
+    min-height: 38px;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  md-list.md-dense md-list-item.md-3-line::before, md-list.md-dense md-list-item.md-3-line > .md-no-style::before {
+    min-height: 38px;
+    margin: 0;
+  }
+  .md-button.md-fab {
+    background-color: rgb(43, 43, 43);
+    position: absolute;
+    right: 3%;
+    top: 0;
+    line-height: 52px;
+    width: 52px;
+    padding: 0;
+    height: 52px;
+    &:not([disabled]) {
+      &:hover {
+        background-color: #3E3E3E;
+      }
+    }
+    span {
+      line-height: 52px;
+      font-weight: 700;
+      font-size: 42px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .dinamicRow {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1201px) {
+  .dinamicRow {
+    flex-direction: row;
+    .historyDiagnoses {
+      md-toolbar {
+        background-color: #64c8fd !important;
+      }
+      md-content {
+      background-color: #f1f1f1;
+    }
+    }
+  }
+}

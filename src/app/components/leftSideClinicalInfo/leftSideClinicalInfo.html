@@ -1,0 +1,19 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="true" md-whiteframe="4">
+
+  <md-content layout-padding="">
+      <span class="md-headline" ng-bind="patient.name"></span>
+
+    <md-button class="md-icon-button" aria-label="Edit" ui-sref="main.clinicalInfo.edit_patient">
+      <i class="material-icons md-light">mode_edit</i>
+    </md-button>
+
+   <br>
+   <br>
+    <div class="md-subhead">Birthday:</div>
+    <div class="md-subhead"  ng-bind="patient.birthday | date: 'dd/MM/yyyy'"></div>
+    <br>
+    <div class="md-subhead">Full Address:</div>
+    <div class="md-subhead" ng-bind="patient.address"></div>
+  </md-content>
+
+</md-sidenav>

@@ -1,0 +1,15 @@
+header {
+  min-width: 100%;
+}
+.mainMdContent {
+  min-width: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  [ui-view] {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+  }
+}

@@ -1,0 +1,106 @@
+<div flex-gt-sm="50" layout-fill>
+    <md-toolbar layout="row" class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <span>Current Diagnoses:</span>
+        </div>
+    </md-toolbar>
+    <md-content>
+
+        <md-list class="md-dense" flex="">
+
+            <md-list-item class="md-3-line md-long-text">
+                <div class="md-list-item-text" flex="25">
+                    <p>Code</p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p>Diagnosis</p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p>Addition Date</p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+
+            <md-list-item class="md-3-line md-long-text" layout-align="center center"
+                          ng-if="diagnoses.$storage.current_diagnoses.length == 0"><div class="md-list-item-text" style="text-align:center"><p>“No Diagnoses”</p></div></md-list-item>
+
+            <md-list-item class="md-3-line md-long-text"
+                          ng-repeat="diagnose in diagnoses.$storage.current_diagnoses">
+                <div class="md-list-item-text" flex="25">
+                    <p ng-bind="diagnose.code"></p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p ng-bind="diagnose.diagnose_text"></p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p ng-bind="diagnose.addition_date"></p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+
+                    <md-button class="md-icon-button" aria-label="Edit" ui-sref="main.clinicalInfo.add_diagnose({id: diagnose.id})" style="color: #ccc; ">
+                        <i class="material-icons md-light">mode_edit</i>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Delete Diagnose" ng-click="diagnoses.delDiagnose($index)">
+                        <i class="material-icons removeBtn">cancel</i>
+                    </md-button>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+        </md-list>
+
+    </md-content>
+</div>
+<md-divider></md-divider>
+<div class="historyDiagnoses" flex-gt-sm="50" layout-fill>
+
+    <md-toolbar layout="row" class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <span>History Diagnoses:</span>
+        </div>
+    </md-toolbar>
+
+    <md-content>
+
+        <md-list class="md-dense" flex="">
+
+            <md-list-item class="md-3-line md-long-text">
+                <div class="md-list-item-text" flex="25">
+                    <p>Code</p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p>Diagnosis</p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p>Addition Date</p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p>Removal Date</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item class="md-3-line md-long-text" layout-align="center center"
+                          ng-if="diagnoses.$storage.history_diagnoses.length == 0"><div class="md-list-item-text" style="text-align:center;"><p>“No Diagnoses”</p></div></md-list-item>
+            <md-list-item class="md-3-line md-long-text"
+                          ng-repeat="diagnose in diagnoses.$storage.history_diagnoses" style=" color: #ccc;" >
+                <div class="md-list-item-text" flex="25">
+                    <p ng-bind="diagnose.code"></p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p ng-bind="diagnose.diagnose_text"></p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p ng-bind="diagnose.addition_date"></p>
+                </div>
+                <div class="md-list-item-text" flex="25">
+                    <p ng-bind="diagnose.removal_date"></p>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+        </md-list>
+
+    </md-content>
+</div>
